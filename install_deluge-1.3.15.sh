@@ -54,6 +54,7 @@ wget -q --show-progress --progress=bar:force http://archive.ubuntu.com/ubuntu/po
 wget -q --show-progress --progress=bar:force http://archive.ubuntu.com/ubuntu/pool/universe/d/deluge/deluge_1.3.15-2_all.deb
 wget -q --show-progress --progress=bar:force http://archive.ubuntu.com/ubuntu/pool/universe/d/deluge/deluge-web_1.3.15-2_all.deb
 wget -q --show-progress --progress=bar:force http://archive.ubuntu.com/ubuntu/pool/universe/d/deluge/deluge-webui_1.3.15-2_all.deb
+wget -q --show-progress --progress=bar:force http://archive.ubuntu.com/ubuntu/pool/universe/d/deluge/deluged_1.3.15-2_all.deb
 
 printf "\n${GRN}Setting ownership of files for apt...${NC}\n"
 sudo chown _apt -R $TEMP_DIR
@@ -71,15 +72,19 @@ Package: deluge-common
 Pin: version 1.3.15-2
 Pin-Priority: 1337
 
+Package: deluge-gtk
+Pin: version 1.3.15-2
+Pin-Priority: 1337
+
 Package: deluge-web
 Pin: version 1.3.15-2
 Pin-Priority: 1337
 
-# Package: deluge-webui
-# Pin: version 1.3.15-2
-# Pin-Priority: 1337
+Package: deluge-webui
+Pin: version 1.3.15-2
+Pin-Priority: 1337
 
-Package: deluge-gtk
+Package: deluged
 Pin: version 1.3.15-2
 Pin-Priority: 1337
 
